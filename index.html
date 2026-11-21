@@ -29,6 +29,9 @@ var ios=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPo
 var safari=/Safari/.test(ua)&&!/Chrome|Chromium|CriOS|Edg|OPR|Android/.test(ua);
 var T='';try{T=localStorage.getItem('svTok')||''}catch(e){}if(T)U+='&t='+encodeURIComponent(T);
 window.addEventListener('message',function(e){if(!/\.googleusercontent\.com$|script\.google\.com$/.test((e.origin||'').replace(/^https:\/\//,'')))return;var d=e.data||{};if(typeof d.svTok==='string'){try{d.svTok?localStorage.setItem('svTok',d.svTok):localStorage.removeItem('svTok')}catch(x){}}});
-var f=document.createElement('iframe');f.src=U;f.title='Servicing Wan Faizat';f.setAttribute('allow','clipboard-read; clipboard-write; web-share; fullscreen');document.body.appendChild(f);})();</script>
+var f=document.createElement('iframe');f.src=U;f.title='Servicing Wan Faizat';f.setAttribute('allow','clipboard-read; clipboard-write; web-share; fullscreen');document.body.appendChild(f);
+var pr=document.createElement('div');pr.style.cssText='position:fixed;left:0;top:0;width:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);visibility:hidden;pointer-events:none';document.body.appendChild(pr);
+function fit(){var cs=getComputedStyle(pr),t=parseFloat(cs.paddingTop)||0,bt=parseFloat(cs.paddingBottom)||0,H=Math.max(window.innerHeight,document.documentElement.clientHeight);if(navigator.standalone&&screen.height>H)H=screen.height;f.style.top=t+'px';f.style.height=(H-t-bt)+'px';}
+fit();window.addEventListener('resize',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,300)});setTimeout(fit,500);})();</script>
 <button id="nbell" type="button">🔔 Hidupkan notifikasi</button>
 </body></html>
